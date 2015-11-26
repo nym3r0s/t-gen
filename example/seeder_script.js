@@ -10,5 +10,7 @@ $(document).ready(function(){
 		"egiven" : "extra_given"
 	}
 
-	addTableFromJSON($("#parent1"),json_string,json_map);
+	tGen($("#parent1"),json_string,json_map);
+
+	tGen($("#parent2"),json_string,json_map,"tshirt_size");
 });

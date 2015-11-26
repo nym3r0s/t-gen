@@ -25,9 +25,15 @@ var json_map = {
 * Call the function with the parent JQuery object
 
 ```js
-addTableFromJSON($("#parent1"),jsonString, json_map);
+tGen($("#parent1"),jsonString, json_map);
 ```
 
-* See `example/seeder_script.js` for usage.
+* If you want the id of the row to be the value of a field from the JSONobj, Just pass the key as a paramter
+
+```js
+tGen($("#parent1"),jsonString, json_map, idKey);
+```
+
+* See `example/seeder_script.js` for usage and more details.
 
 :copyright: 2015 Gokul Srinivas

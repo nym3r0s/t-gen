@@ -1,5 +1,6 @@
-function addTableFromJSON(parent,jsonString,jsonMap)
+function tGen(p,jsonString,jsonMap,defIdField)
 {
+	defIdField = typeof defIdField !== 'undefined' ? defIdField : "delta-force";
 
 	var jsonObj = $.parseJSON(jsonString);
 
@@ -14,7 +15,7 @@ function addTableFromJSON(parent,jsonString,jsonMap)
 	newTable.append(newTableHead);
 	newTable.append(newTableBody);
 	
-	parent.append($(newTable));
+	p.append($(newTable));
 	
 
 	// Add the necessary classes;
@@ -43,6 +44,11 @@ function addTableFromJSON(parent,jsonString,jsonMap)
 		var newRow = document.createElement("tr");
 		newRow = $(newRow);
 		newTableBody.append(newRow);
+		
+		if(defIdField !== "delta-force")
+		{
+			newRow.attr("id",elem[defIdField]);
+		}
 
 		$.each(jsonMap,function(key,val){
 			// console.log(key + val);
